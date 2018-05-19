@@ -32,5 +32,20 @@ function addEmployee(){
 
 function displayEmployee(){
     console.log( 'in displayEmployee' );
-}
+    //target output element
+    let el = $( '.tableData');
+    //empty the output element
+    el.empty();
+    //loop through array
+    for( newEmployee of employeeArray ){
+        let outputString = '<tr>';
+            outputString += '<td>' + newEmployee.firstName + '</td>';
+            outputString += '<td>' + newEmployee.lastName + '</td>';
+            outputString += '<td>' + newEmployee.id + '</td>';
+            outputString += '<td>' + newEmployee.title + '</td>';
+            outputString += '<td>' + newEmployee.annualSalary + '</td>';
+            outputString += '</tr>';
+        el.append( outputString );
+    } //end for of loop
+} //end displayEmployee
 
