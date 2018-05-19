@@ -48,5 +48,17 @@ function displayEmployee(){
         el.append( outputString );
     } //end for of loop
 } //end displayEmployee
-//newstuff???
+
+function totalMonthly(){
+    let sum = 1;
+    for( newEmployee of employeeArray){
+        sum += Math.floor(parseInt(newEmployee.annualSalary)) ;
+        
+    }
+   return sum/12;
+   //end math
+   //append it!
+} //end totalMonthly
+
+
 
