@@ -47,8 +47,7 @@ function appendTableHead(){
     $('.tableHead').append('<th>Last Name</th>');
     $('.tableHead').append('<th>ID</th>');
     $('.tableHead').append('<th>Title</th>');
-    $('.tableHead').append('<th>Annual Salary</th>');
-    // $('.tableHead').append('<th></th>');
+    $('.tableHead').append('<th colspan="2">Annual Salary</th>');
     $('.blankRow').empty();
     $('.blankRow').append('<td colspan="6"</td>');
 }
@@ -69,7 +68,7 @@ function displayEmployee(){
             outputString += '<td>' + newEmployee.id + '</td>';
             outputString += '<td>' + newEmployee.title + '</td>';
             outputString += `<td data-type="salary" data-value=${newEmployee.annualSalary}>` + newEmployee.annualSalary + '</td>';
-            outputString += `<td><input type="button" value="Delete" onclick="deleteRow(this)"/></td>`;
+            outputString += `<td id=deleteButton><input type="button" id="deleteButton" value="Delete" onclick="deleteRow(this)"/></td>`;
             outputString += '</tr>';
         el.append( outputString );
     } //end for of loop

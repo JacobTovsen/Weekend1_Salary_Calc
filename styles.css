@@ -48,9 +48,14 @@ tr:nth-child(even){
 }
 
 /* #firstName, #lastName, #id, #title, #annualSalary{
-    text-align: left;
+    text-align: center;
 } */
 
 #totalMonthly{
     text-align: right;
+}
+
+#deleteButton{
+    width: 100px;
+    text-align: center;
 }
