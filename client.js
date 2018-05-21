@@ -35,10 +35,28 @@ function addEmployee(){
     $('#title').val("");
     $('#annualSalary').val("");
     appendMonthly();
+
 } //end addEmployee
+
+function appendTableHead(){
+    //building table frame - DOM will show no fram with no data
+    $('.tableEmployee').empty();
+    $('.tableEmployee').append('Employees');
+    $('.tableHead').empty();
+    $('.tableHead').append('<th>First Name</th>');
+    $('.tableHead').append('<th>Last Name</th>');
+    $('.tableHead').append('<th>ID</th>');
+    $('.tableHead').append('<th>Title</th>');
+    $('.tableHead').append('<th>Annual Salary</th>');
+    // $('.tableHead').append('<th></th>');
+    $('.blankRow').empty();
+    $('.blankRow').append('<td colspan="6"</td>');
+}
 
 function displayEmployee(){
     console.log( 'in displayEmployee' );
+    //build table frame
+    appendTableHead();
     //target output element
     let el = $( '.tableData');
     //empty the output element
@@ -50,11 +68,17 @@ function displayEmployee(){
             outputString += '<td>' + newEmployee.lastName + '</td>';
             outputString += '<td>' + newEmployee.id + '</td>';
             outputString += '<td>' + newEmployee.title + '</td>';
-            outputString += '<td>' + newEmployee.annualSalary + '</td>';
+            outputString += `<td data-type="salary" data-value=${newEmployee.annualSalary}>` + newEmployee.annualSalary + '</td>';
+            outputString += `<td><input type="button" value="Delete" onclick="deleteRow(this)"/></td>`;
             outputString += '</tr>';
         el.append( outputString );
     } //end for of loop
 } //end displayEmployee
+
+function deleteRow(btn) {
+    let row = btn.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+  } //I got this whole value from stack overflow and I don't quite understand it...but it works.
 
 let sum = 0;
 

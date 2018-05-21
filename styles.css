@@ -1,10 +1,13 @@
+
+
 body{
     padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .blankRow{
     background-color: #e0e2e5;
-    height: 40px;
+    height: 20px;
 }
 
 h1{
@@ -27,27 +30,26 @@ h3{
 table{
     border-collapse: collapse;
     width: 100%;
+    border: 1x solid black;
 }
 
 th{
     background-color: lightgray;
+    text-align: left;
 }
 
 tr, th, td{
     border: 1px solid black;
+    padding-left: 5px;
 }
 
 tr:nth-child(even){
     background-color: #f2f2f2;
 }
 
-#firstName, #lastName, #id, #title, #annualSalary{
-    width: 120px;
-}
-
-#tableFoot{
-    padding-top: 40px;
-}
+/* #firstName, #lastName, #id, #title, #annualSalary{
+    text-align: left;
+} */
 
 #totalMonthly{
     text-align: right;
