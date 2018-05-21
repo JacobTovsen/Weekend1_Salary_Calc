@@ -34,6 +34,7 @@ function addEmployee(){
     $('#id').val("");
     $('#title').val("");
     $('#annualSalary').val("");
+    appendMonthly();
 } //end addEmployee
 
 function displayEmployee(){
@@ -55,19 +56,26 @@ function displayEmployee(){
     } //end for of loop
 } //end displayEmployee
 
+let sum = 0;
 
 function totalMonthly(){
-    let sum = 0;
     for( newEmployee of employeeArray){
-        sum += Math.floor(parseInt(newEmployee.annualSalary)) ;
+        sum += (Math.floor(parseInt(newEmployee.annualSalary))) ;
         
     }
-    sum=sum/12;
-    return sum
+    sum=Math.floor(sum/12);
+    return sum;
    //end math
-    if (sum <= 20000){
-        $('#totalMonthly').append(`Total Monthly: ${sum}`);
-    }
 } //end totalMonthly
 //and ???
 
+function appendMonthly(){
+    totalMonthly();
+    $('#totalMonthly').empty();
+    if (sum <= 20000){
+        $('#totalMonthly').append(`Total Monthly Expense: $${sum}`);
+    } else {
+        $('#totalMonthly').css('background-color', 'red');
+        $('#totalMonthly').append(`Total Monthly Expense: $${sum}`);
+    }
+}

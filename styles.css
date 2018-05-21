@@ -48,3 +48,7 @@ tr:nth-child(even){
 #tableFoot{
     padding-top: 40px;
 }
+
+#totalMonthly{
+    text-align: right;
+}
