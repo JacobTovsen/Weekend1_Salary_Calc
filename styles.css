@@ -1,9 +1,50 @@
+body{
+    padding: 10px;
+}
+
+.blankRow{
+    background-color: #e0e2e5;
+    height: 40px;
+}
+
+h1{
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+h3{
+    padding-top: 40px;
+}
+
 .inputEmployee{
     position: relative;
     display: inline-block;
 }
 
-table, th, td{
-    border: 1px solid black;
+table{
     border-collapse: collapse;
+    width: 100%;
+}
+
+th{
+    background-color: lightgray;
+}
+
+tr, th, td{
+    border: 1px solid black;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#firstName, #lastName, #id, #title, #annualSalary{
+    width: 120px;
+}
+
+#tableFoot{
+    padding-top: 40px;
 }

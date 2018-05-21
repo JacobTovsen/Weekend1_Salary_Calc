@@ -28,6 +28,12 @@ function addEmployee(){
     employeeArray.push( newEmployee );
     //update DOM
     displayEmployee();
+    //clear input fields
+    $('#firstName').val("");
+    $('#lastName').val("");
+    $('#id').val("");
+    $('#title').val("");
+    $('#annualSalary').val("");
 } //end addEmployee
 
 function displayEmployee(){
@@ -49,16 +55,19 @@ function displayEmployee(){
     } //end for of loop
 } //end displayEmployee
 
+
 function totalMonthly(){
-    let sum = 1;
+    let sum = 0;
     for( newEmployee of employeeArray){
         sum += Math.floor(parseInt(newEmployee.annualSalary)) ;
         
     }
-   return sum/12;
+    sum=sum/12;
+    return sum
    //end math
-   //append it!
+    if (sum <= 20000){
+        $('#totalMonthly').append(`Total Monthly: ${sum}`);
+    }
 } //end totalMonthly
 //and ???
-
 
