@@ -77,8 +77,11 @@ function displayEmployee(){
 function deleteRow(btn) {
     let row = btn.parentNode.parentNode;
     row.parentNode.removeChild(row);
-  } //I got this whole value from stack overflow and I don't quite understand it...but it works.
-
+  } //I got this whole value from stack overflow and I don't quite understand it...but it works!
+    // for( i=0; i<employeeArray.length; i++){
+    //     const employee = employeeArray[i];
+    //     if ()
+    // }
 let sum = 0;
 
 function totalMonthly(){
